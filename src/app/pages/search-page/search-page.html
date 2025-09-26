@@ -1,6 +1,18 @@
-<p>search-page works!</p>
-
-
+<div class="paginations">
+        @if(page > 10){
+    <button (click)="page = page - 10;updatePage()"><<</button>
+    }
+    @if(page > 1){
+    <button (click)="page = page - 1;updatePage()"><</button>
+    }
+    Page {{page}}/197
+    @if (page >= 1 && page != 197) {
+    <button (click)="page = page + 1;updatePage()">></button>
+    }
+        @if (page >= 1 && page != 197) {
+    <button (click)="page = page + 10;updatePage()">>></button>
+    }
+</div>
 
 <div class="card-container">
     @for (item of this.disneyCharacter()?.data; track $index ) {
@@ -8,7 +20,7 @@
 
     <div class="content">
         <img class="image" src="{{item.imageUrl}}" alt="">
-        <a  routerLink="/search/{{item._id}}" class="title">
+        <a routerLink="/search/{{item._id}}" class="title">
             <span class="title">
                 {{item.name}}
             </span>

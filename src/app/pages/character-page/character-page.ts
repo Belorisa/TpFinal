@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { DisneyCharacter, DisneyCharacterSingle } from '../../models/disney-character';
+import { DisneyCharacterSingle } from '../../models/disney-character';
 import { ActivatedRoute } from '@angular/router';
 import { DisneyJsonApi } from '../../services/disney-json-api';
 

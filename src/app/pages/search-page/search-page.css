@@ -1,6 +1,6 @@
 .card-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 20px;
 
 }
@@ -10,12 +10,21 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: rgb(239, 205, 255);
+    background-color: rgb(238, 69, 47);
     height: 150px;
     border-radius: 20px;
     gap: 10px;
 
 }
+
+.paginations {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+    padding: 10px;
+}
+
 
 
 .image {
@@ -31,10 +40,12 @@
 
 .title {
     color: #111827;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
     max-width: 25%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,11 +1,11 @@
 export interface DisneyCharacter {
- info: Info;
- data: Character[]
+    info: Info;
+    data: Character[]
 }
 
 export interface DisneyCharacterSingle {
- info: Info;
- data: Character
+    info: Info;
+    data: Character
 }
 
 

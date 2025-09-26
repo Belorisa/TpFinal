@@ -11,10 +11,15 @@ import { RouterLink } from '@angular/router';
 })
 export class SearchPage {
   disneyCharacter = signal<DisneyCharacter | null>(null);
+  page: number = 1;
   private readonly disneyJsonApi: DisneyJsonApi = inject(DisneyJsonApi)
 
   ngOnInit() {
-    this.disneyJsonApi.getCharacters().subscribe({
+    this.updatePage()
+  }
+
+  updatePage() {
+    this.disneyJsonApi.getCharacterPage(this.page).subscribe({
       next: data => {
         this.disneyCharacter.set(data)
         console.log('Disney Response', this.disneyCharacter()!.data)
@@ -23,5 +28,4 @@ export class SearchPage {
     })
 
   }
-
 }

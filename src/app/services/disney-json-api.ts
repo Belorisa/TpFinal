@@ -18,7 +18,7 @@ export class DisneyJsonApi {
     return this.http.get<DisneyCharacterSingle>(`${environment.BASE_URL_DISNEY_API}character/${id}`)
   }
 
-  getCharacterPage(page: number): Observable<DisneyCharacter> {
+  getCharacterPage(page: number = 1): Observable<DisneyCharacter> {
     return this.http.get<DisneyCharacter>(`${environment.BASE_URL_DISNEY_API}character?page=${page}`)
   }
 }
