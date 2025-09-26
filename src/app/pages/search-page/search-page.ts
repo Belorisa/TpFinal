@@ -13,6 +13,7 @@ export class SearchPage {
   disneyCharacter = signal<DisneyCharacter | null>(null);
   page: number = 1;
   private readonly disneyJsonApi: DisneyJsonApi = inject(DisneyJsonApi)
+  isloading = signal(false)
 
   ngOnInit() {
     this.updatePage()
@@ -27,5 +28,17 @@ export class SearchPage {
       error: error => console.error(error)
     })
 
+  }
+
+  searchCharacter(search: string) {
+    this.isloading.set(true)
+    this.disneyJsonApi.getCharactersSearch(search, this.page).subscribe({
+      next: data => {
+        this.disneyCharacter.set(data)
+        console.log('Disney Response', this.disneyCharacter()!.data)
+        this.isloading.set(false)
+      },
+      error: error => console.error(error)
+    })
   }
 }
