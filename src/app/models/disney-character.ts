@@ -3,6 +3,12 @@ export interface DisneyCharacter {
  data: Character[]
 }
 
+export interface DisneyCharacterSingle {
+ info: Info;
+ data: Character
+}
+
+
 export interface Info {
     totalPages: number;
     count: number;
@@ -10,9 +16,6 @@ export interface Info {
     nextPage: string;
 }
 
-export interface Data {
-    character: Character
-}
 
 export interface Character {
     _id: number
