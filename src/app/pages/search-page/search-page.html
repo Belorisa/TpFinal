@@ -1,0 +1,22 @@
+<p>search-page works!</p>
+
+
+
+<div class="card-container">
+    @for (item of this.disneyCharacter()?.data; track $index ) {
+
+
+    <div class="content">
+        <img class="image" src="{{item.imageUrl}}" alt="">
+        <a href="#" class="title">
+            <span class="title">
+                {{item.name}}
+            </span>
+        </a>
+
+    </div>
+
+
+
+    }
+</div>
